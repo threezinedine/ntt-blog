@@ -72,3 +72,52 @@ export const Link: Story = {
 		style: 'link',
 	},
 };
+
+export const Small: Story = {
+	args: {
+		children: 'Button',
+		size: 'small',
+	},
+};
+
+export const Medium: Story = {
+	args: {
+		children: 'Button',
+		size: 'medium',
+	},
+};
+
+export const Large: Story = {
+	args: {
+		children: 'Button',
+		size: 'large',
+	},
+};
+
+export const Full: Story = {
+	args: {
+		children: 'Button',
+		size: 'full',
+	},
+};
+
+export const Rounded: Story = {
+	args: {
+		children: 'Button',
+		shape: 'rounded',
+	},
+};
+
+export const Square: Story = {
+	args: {
+		children: 'Button',
+		shape: 'square',
+	},
+};
+
+export const Pill: Story = {
+	args: {
+		children: 'Button',
+		shape: 'pill',
+	},
+};

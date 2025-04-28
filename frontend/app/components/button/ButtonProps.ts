@@ -9,8 +9,14 @@ type ButtonStyle =
 	| 'link'
 	| 'outline';
 
+type ButtonSize = 'small' | 'medium' | 'large' | 'full';
+
+type ButtonShape = 'rounded' | 'square' | 'pill';
+
 export default interface ButtonProps {
 	children: React.ReactNode;
 	onClick?: () => void;
 	style?: ButtonStyle;
+	size?: ButtonSize;
+	shape?: ButtonShape;
 }

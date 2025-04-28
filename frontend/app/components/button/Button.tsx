@@ -2,8 +2,14 @@ import React from 'react';
 import ButtonProps from './ButtonProps';
 import clsx from 'clsx';
 
-function Button({ children, onClick, style = 'primary' }: ButtonProps) {
-	const commonStyle: string = clsx(
+function Button({
+	children,
+	onClick,
+	style = 'primary',
+	size = 'small',
+	shape = 'rounded',
+}: ButtonProps) {
+	const commonStyleClasses: string = clsx(
 		'rounded',
 		'focus:ring-opacity-50',
 		'focus:ring-2',
@@ -11,12 +17,14 @@ function Button({ children, onClick, style = 'primary' }: ButtonProps) {
 		'focus:outline-none',
 		'hover:cursor-pointer',
 		'inline-block',
-		'user-select-none',
 		'px-4',
 		'py-2',
+		'user-select-none',
+		'select-none',
+		'text-center',
 	);
 
-	const styleClasses: string = clsx(
+	const colorStyleClasses: string = clsx(
 		style == 'primary' &&
 			clsx(
 				'bg-blue-500',
@@ -76,8 +84,29 @@ function Button({ children, onClick, style = 'primary' }: ButtonProps) {
 			),
 	);
 
+	const sizeStyleClasses: string = clsx(
+		size == 'small' && 'px-4 py-2',
+		size == 'medium' && 'px-6 py-3',
+		size == 'large' && 'px-8 py-4',
+		size == 'full' && 'w-full',
+	);
+
+	const shapeStyleClasses: string = clsx(
+		shape == 'rounded' && 'rounded-md',
+		shape == 'square' && 'rounded-none',
+		shape == 'pill' && 'rounded-full',
+	);
+
 	return (
-		<div className={clsx(commonStyle, styleClasses)} onClick={onClick}>
+		<div
+			className={clsx(
+				commonStyleClasses,
+				colorStyleClasses,
+				sizeStyleClasses,
+				shapeStyleClasses,
+			)}
+			onClick={onClick}
+		>
 			{children}
 		</div>
 	);
