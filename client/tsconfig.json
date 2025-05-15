@@ -2,19 +2,18 @@
 	"compilerOptions": {
 		"module": "ESNext",
 		"jsx": "react-jsx",
-		"composite": true,
-		"noEmit": true,
 		"skipLibCheck": true,
-		"outDir": "dist-react",
+		"moduleResolution": "bundler",
 		"rootDir": "src",
-		"allowImportingTsExtensions": true,
 		"esModuleInterop": true,
 		"baseUrl": ".",
 		"paths": {
 			"@/*": ["src/*"]
-		}
+		},
+		"allowImportingTsExtensions": true,
+		"noEmit": true
 	},
 	"include": ["src"],
-	"exclude": ["src/electron"]
-	// "references": [{ "path": "./tsconfig.node.json" }]
+	"exclude": ["src/electron"],
+	"references": [{ "path": "./tsconfig.node.json" }]
 }

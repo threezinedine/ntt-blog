@@ -1,4 +1,4 @@
-import Button from './components/button';
+import Button from '@/ui/components/button';
 
 function App() {
 	return (
