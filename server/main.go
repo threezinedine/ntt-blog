@@ -23,11 +23,6 @@ func main() {
 	muxWrap.HandleFunc(fmt.Sprintf("POST %s/users/register", API_BASE),
 		middlewares.JsonTypeRequestValidation(users.RegisterNewUser))
 
-	muxWrap.Mux.HandleFunc("/apis/print/{msg}", func(w http.ResponseWriter, r *http.Request) {
-		var msg string = r.PathValue("msg")
-		w.Write([]byte(msg))
-	})
-
 	fmt.Printf("[INFO] Starting server at port: %d\n", PORT)
 	http.ListenAndServe(fmt.Sprintf(":%d", PORT), muxWrap.Mux)
 }
